@@ -10,7 +10,6 @@
 * [.gitignore](#gitignore)
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
-* [Configuration](#configuration)
 * [Data Layout](#data-layout)
 * [Processing & Optimization](#processing--optimization)
 * [Workflow](#workflow)
