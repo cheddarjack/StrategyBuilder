@@ -1,0 +1,41 @@
+data:
+  Raw_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/0_raw_data/MESu24-CME.parquet
+  converted_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/1_converted_data/MESZ24.parquet
+  snipped_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/2_snipped_data/MES-March2Present.parquet
+  preprocessed_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/3_preprocessed_data/preprocessed_MES_March-Feb21.parquet
+
+output:
+  processed_tick_data_dir: /home/cheddarjackk/Developer/StrategyBuilder/d__data/4_processed_tick_data
+  best_params: /home/cheddarjackk/Developer/StrategyBuilder/d__data/best_params.parquet
+  metrics_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/trade_metrics.parquet
+  processed_tick_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/processed_data.parquet
+  time_metrics: /home/cheddarjackk/Developer/StrategyBuilder/d__data/time_metrics.parquet
+  trade_data_path: /home/cheddarjackk/Developer/StrategyBuilder/d__data/trade_data.parquet
+
+parameters:
+  k_length: 20
+  big_k: 60
+  Slow_K_High: 78 #   
+  Slow_K_High_cap: 85 #
+  Slow_K_Low: 23 #
+  Slow_K_Low_cap: 5 #
+  candles: 6
+  high_average: 8.5
+  low_average: 2.25
+  threshold: 14.0
+  high_value: 200
+  low_value: 430
+  max_value: 590
+  min_value: 130 #
+  num_changes_5: 5
+  RoC_Threshold: 90
+  start_time1: 0 #
+  end_time1: 60000 #
+  stop_loss: 1.75 #
+  take_profit: 1.0 #
+  timer: 300 #
+  donchian_period: 4
+  VHF_period: 28
+  sma1_period: 12
+  sma2_period: 50
+

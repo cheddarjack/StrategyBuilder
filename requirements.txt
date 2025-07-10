@@ -1,0 +1,14 @@
+PyYAML
+pandas
+numpy
+optuna
+psutil
+matplotlib
+tensorflow==2.18.0
+numpy
+numba
+tqdm
+pyarrow
+tensorflow
+pymysql
+pytz
