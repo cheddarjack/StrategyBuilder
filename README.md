@@ -104,64 +104,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Configuration
-
-Edit `c__config/config.yaml` to set:
-
-* Optuna storage URL (e.g., MySQL/MariaDB DSN)
-* Study name and direction
-* Hyperparameter ranges for:
-
-  * `stoch_length`, `sma_period`, `AvgRate_N`, `ComplexValue` thresholds
-  * `donchian_period`, `RoC_threshold`, `timer`, `take_profit`, `stop_loss`
-* Data directories under `d__data/`
-* Worker settings (`n_jobs`, CPU affinity, GPU flags)
-
-Example snippet:
-
-```yaml
-optuna:
-  storage: mysql+pymysql://user:pass@localhost:3306/optuna
-  study_name: market_edge_opt
-  direction: maximize
-
-parameters:
-  stoch_length:
-    min: 3
-    max: 30
-  sma_period:
-    min: 5
-    max: 100
-  AvgRate_N:
-    min: 3
-    max: 20
-  ComplexValue:
-    high_value: {min: 50, max: 300, step: 10}
-    low_value:  {min: 10,  max: 200, step: 10}
-  donchian_period:
-    min: 2
-    max: 20
-  RoC_threshold:
-    min: 10
-    max: 200
-  take_profit:
-    min: 0.5
-    max: 5.0
-  stop_loss:
-    min: 0.5
-    max: 5.0
-  timer:
-    min: 30
-    max: 3600
-
-data:
-  base_dir: ../d__data/3_day_data_preprocessed
-  session_chunk: 10  # days per worker
-  max_sessions: 20
-workers:
-  use_gpu: false
-  n_jobs_cpu: 4
-```
 
 ## Data Layout
 
@@ -196,7 +138,7 @@ Place your `.parquet` files under the corresponding `d__data` subfolders:
      ```
 3. **Monitor logs** in `e__output/` and inspect `optimization_history.html` and `param_importances.html`.
 
-## Workflow
+## Workflow (for running 3__Bayesian.py)
 
 1. **Session chunking**: Each worker receives 10-day segments; success proceeds to the next chunk, failure triggers parameter resampling.
 2. **Indicator calculation** in `f__modules/strat.py`, including:
